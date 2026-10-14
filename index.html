@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="المنبر - واجهة الطالب" />
+    <title>المنبر - واجهة الطالب</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;700;900&family=Tajawal:wght@400&family=Aref+Ruqaa:wght@400;700&family=Amiri:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#2A3E34",
+              navbar: "#3A5A40",
+            },
+          },
+        },
+      };
+    </script>
+
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <a href="#main-content" class="skip-link">تخطى إلى المحتوى</a>
+
+    <!-- ===== NAVBAR (shared) ===== -->
+    <header class="navbar">
+      <div class="container navbar__inner">
+        <a href="#" class="navbar__brand font-thuluth">المنبر</a>
+
+        <button
+          type="button"
+          class="navbar__burger"
+          id="nav-burger"
+          aria-label="القائمة"
+          aria-expanded="false"
+          aria-controls="nav-menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav class="navbar__links" id="nav-menu" aria-label="القائمة الرئيسية">
+          <span class="navbar__link navbar__link--current">الرئيسية</span>
+          <a class="navbar__link" href="#mقرراتي">مقرراتي الدراسية</a>
+          <span class="navbar__link">الجدول الدراسي</span>
+          <a class="navbar__link" href="#مكتبة">المكتبة</a>
+          <a class="navbar__link" href="#دعم">الدعم الأكاديمي</a>
+        </nav>
+
+        <div class="navbar__account">
+          <button type="button" class="navbar__bell" aria-label="الإشعارات">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path
+                d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"
+              />
+            </svg>
+          </button>
+
+          <div class="navbar__avatar-wrap">
+            <img
+              class="navbar__avatar"
+              src="img/avatar.png"
+              alt="صورة الطالب"
+              width="45"
+              height="45"
+            />
+          </div>
+
+          <button
+            type="button"
+            class="navbar__chevron"
+            id="profile-toggle"
+            aria-label="قائمة الحساب"
+            aria-expanded="false"
+            aria-haspopup="true"
+          >
+            <svg viewBox="0 0 24 14" fill="none" aria-hidden="true">
+              <path
+                d="M2 2l10 10L22 2"
+                stroke="currentColor"
+                stroke-width="3"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
+
+          <div class="profile-menu" id="profile-menu" hidden>
+            <a class="profile-menu__item" href="#profile">الملف الشخصي</a>
+            <a class="profile-menu__item" href="#settings">الإعدادات</a>
+            <a class="profile-menu__item" href="#logout">تسجيل الخروج</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main id="main-content" tabindex="-1">
+      <!-- ===== HERO ===== -->
+      <section class="hero">
+        <div class="hero__back" aria-hidden="true">
+          <img src="img/mainback.svg" alt="" />
+        </div>
+
+        <div class="container hero__inner">
+          <div class="hero__text">
+            <p class="hero__verse-label">قال الله تعالى:</p>
+            <p class="hero__verse font-naskh">
+              قُلْ هَلْ يَسْتَوِي الَّذِينَ يَعْلَمُونَ وَالَّذِينَ لا يَعْلَمُونَ
+            </p>
+            <p class="hero__welcome">
+              ترحب اكاديمية المنبر بالطلبة الجدد، سائلين الله تعالى لهم التوفيق
+              والنجاح، ,ونهيب بهم جميعاً بالإخلاص اولاً في طلب العلم، والسعي
+              الدائم في تحصيل ما ينفع، وربط ما يدرس ويتعلم بحياته قولاً وعملاً،
+              وفقكم الله جميعاً لما يحبه ويرضاه.
+            </p>
+          </div>
+
+          <img
+            class="hero__mosque"
+            src="img/mosque.png"
+            alt="رسم توضيحي لمسجد"
+            width="799"
+            height="723"
+          />
+        </div>
+      </section>
+
+      <div class="container">
+        <div class="hero__divider" aria-hidden="true"></div>
+      </div>
+
+      <!-- ===== COURSES ===== -->
+      <section class="courses container" id="courses" aria-label="المقررات"></section>
+
+      <!-- ===== RATING ===== -->
+      <section class="rating" id="rating">
+        <div class="container">
+          <h2 class="rating__heading">اضف تقييمك</h2>
+
+          <div class="rating__subtitle">
+            <p class="rating__subtitle-line1">
+              ساعدنا في التحسين بشكل مستمر في اكاديمية المنبر
+            </p>
+            <p class="rating__subtitle-line2">
+              فإننا نعمل جاهدين على تحسين جودة ايصال العلوم الشرعية، لا تبخل
+              بأن تكون جزء من هذا العمل
+            </p>
+          </div>
+
+          <div class="rating__grid">
+            <img
+              class="rating__illus"
+              src="img/contactus.png"
+              alt="رسم توضيحي لتقييم عبر الجوال"
+              width="799"
+              height="927"
+            />
+
+            <form class="rating-form" id="rating-form" novalidate>
+              <div class="field">
+                <label class="field__label" for="name">الاسم بالكامل</label>
+                <div class="field__box">
+                  <input
+                    class="field__input"
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="الاسم بالكامل"
+                    autocomplete="name"
+                    required
+                  />
+                  <span class="field__icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                      <path
+                        d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
+                      />
+                    </svg>
+                  </span>
+                </div>
+                <p class="field__error" data-error-for="name" hidden>
+                  من فضلك أدخل اسمك
+                </p>
+              </div>
+
+              <div class="field">
+                <label class="field__label" for="email">البريد الالكتروني</label>
+                <div class="field__box">
+                  <input
+                    class="field__input field__input--ltr"
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="البريد الالكتروني"
+                    autocomplete="email"
+                    dir="ltr"
+                    required
+                  />
+                  <span
+                    class="field__icon field__icon--mail"
+                    aria-hidden="true"
+                  >
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                      <path
+                        d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"
+                      />
+                    </svg>
+                  </span>
+                </div>
+                <p class="field__error" data-error-for="email" hidden>
+                  من فضلك أدخل بريداً إلكترونياً صحيحاً
+                </p>
+              </div>
+
+              <div class="stars-block">
+                <div
+                  class="stars"
+                  role="radiogroup"
+                  aria-label="اختر تقييمك"
+                  id="stars"
+                >
+                  <button
+                    type="button"
+                    class="stars__btn is-active"
+                    data-value="1"
+                    role="radio"
+                    aria-checked="true"
+                    aria-label="غير راض"
+                  >
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path
+                        d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                      />
+                    </svg>
+                  </button>
+                  <button
+                    type="button"
+                    class="stars__btn is-active"
+                    data-value="2"
+                    role="radio"
+                    aria-checked="true"
+                    aria-label="غير راض جداً"
+                  >
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path
+                        d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                      />
+                    </svg>
+                  </button>
+                  <button
+                    type="button"
+                    class="stars__btn is-active"
+                    data-value="3"
+                    role="radio"
+                    aria-checked="true"
+                    aria-label="متوسط"
+                  >
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path
+                        d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                      />
+                    </svg>
+                  </button>
+                  <button
+                    type="button"
+                    class="stars__btn"
+                    data-value="4"
+                    role="radio"
+                    aria-checked="false"
+                    aria-label="راض"
+                  >
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path
+                        d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                      />
+                    </svg>
+                  </button>
+                  <button
+                    type="button"
+                    class="stars__btn"
+                    data-value="5"
+                    role="radio"
+                    aria-checked="false"
+                    aria-label="راض جداً"
+                  >
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path
+                        d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                      />
+                    </svg>
+                  </button>
+                </div>
+                <div class="stars__labels" aria-hidden="true">
+                  <span class="stars__label stars__label--right">غير راض</span>
+                  <span class="stars__label stars__label--left">راض جداً</span>
+                </div>
+                <input type="hidden" name="rating" id="rating-value" value="3" />
+                <p
+                  class="field__error field__error--stars"
+                  data-error-for="rating"
+                  hidden
+                >
+                  من فضلك اختر تقييماً
+                </p>
+              </div>
+
+              <div class="field field--textarea">
+                <textarea
+                  class="field__textarea"
+                  id="message"
+                  name="message"
+                  placeholder="التقييم .... (اختياري)"
+                  aria-label="التقييم (اختياري)"
+                ></textarea>
+              </div>
+
+              <button class="rating-form__submit" type="submit">
+                أرسل تقييمك
+              </button>
+
+              <p class="rating-form__success" id="form-success" hidden>
+                تم إرسال تقييمك بنجاح، شكراً لك!
+              </p>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ===== FOOTER (shared) ===== -->
+    <footer class="footer">
+      <div class="container footer__inner">
+        <div class="footer__brand font-thuluth">المنبر</div>
+
+        <nav class="footer__links" aria-label="روابط الفوتر">
+          <div class="footer__col">
+            <a class="footer__link" href="#home">الرئيسية</a>
+            <a class="footer__link" href="#library">المكتبة</a>
+          </div>
+          <div class="footer__col">
+            <a class="footer__link" href="#courses-link">مقرراتي الدراسية</a>
+            <a class="footer__link" href="#support">الدعم الاكاديمي</a>
+          </div>
+          <div class="footer__col">
+            <a class="footer__link" href="#schedule">الجدول الدراسي</a>
+          </div>
+        </nav>
+
+        <div class="footer__social">
+          <a class="footer__social-link" href="#" aria-label="فيسبوك">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path
+                d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"
+              />
+            </svg>
+          </a>
+          <a class="footer__social-link" href="#" aria-label="انستجرام">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path
+                d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z"
+              />
+            </svg>
+          </a>
+          <a
+            class="footer__social-link footer__social-link--yt"
+            href="#"
+            aria-label="يوتيوب"
+          >
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path
+                d="M10 15l5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73z"
+              />
+            </svg>
+          </a>
+          <a class="footer__social-link" href="#" aria-label="تيليجرام">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path
+                d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"
+              />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <p class="footer__copyright">
+        جميع الحقوق محفوظة لأكاديمية المنبر 2024©
+      </p>
+    </footer>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>

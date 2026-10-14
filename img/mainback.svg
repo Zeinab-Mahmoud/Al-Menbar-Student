@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1186" height="1093" viewBox="0 0 1186 1093">
+  <defs>
+    <pattern id="orn" width="360" height="360" patternUnits="userSpaceOnUse">
+      <g fill="none" stroke="#d2dbc4" stroke-width="9" stroke-linecap="round">
+        <path d="M40 320 C40 200 120 110 180 155 C245 205 155 255 200 300 C245 345 335 300 322 195"/>
+        <path d="M320 40 C200 40 110 120 155 180 C205 245 255 155 300 200 C345 245 300 335 195 322"/>
+        <path d="M60 60 C125 35 170 85 145 130 C130 155 100 150 95 125"/>
+        <path d="M300 300 C265 345 310 350 325 305"/>
+        <path d="M180 20 C200 70 160 90 175 130"/>
+        <path d="M20 180 C70 160 90 200 130 185"/>
+        <circle cx="180" cy="180" r="24"/>
+        <path d="M340 140 C300 130 290 170 310 190"/>
+        <path d="M140 340 C130 300 170 290 190 310"/>
+      </g>
+      <g fill="#dbe2d0">
+        <ellipse cx="100" cy="240" rx="36" ry="17" transform="rotate(-32 100 240)"/>
+        <ellipse cx="262" cy="98" rx="36" ry="17" transform="rotate(32 262 98)"/>
+        <ellipse cx="258" cy="262" rx="17" ry="34" transform="rotate(-22 258 262)"/>
+        <ellipse cx="98" cy="98" rx="14" ry="28" transform="rotate(24 98 98)"/>
+        <circle cx="180" cy="180" r="10" fill="#cfd8bd"/>
+      </g>
+      <g fill="none" stroke="#c9d3b8" stroke-width="4" opacity="0.85">
+        <path d="M70 150 C110 120 150 140 160 175"/>
+        <path d="M290 210 C250 240 210 220 200 185"/>
+        <path d="M210 70 C240 110 220 150 185 160"/>
+        <path d="M150 290 C110 250 130 210 165 200"/>
+      </g>
+    </pattern>
+  </defs>
+  <rect width="1186" height="1093" fill="url(#orn)"/>
+</svg>
